@@ -46,9 +46,6 @@ class HomePage2 extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
           ),
-
-
-
           SizedBox(
             width: 200,
             child: ElevatedButton.icon(
