@@ -6,8 +6,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+       
         backgroundColor: Colors.blue,
-        title: Text("Row Column"),
+        title: Align(
+            alignment: Alignment.topRight,
+            child: Text("Row ")),
 
       ),
 
@@ -58,7 +61,7 @@ class HomePage extends StatelessWidget {
       //     ]
       //       ),
       // ),
-      body:   Column(
+      body:   Row(
           mainAxisAlignment: MainAxisAlignment.start,  //if we use scrollview, it will not work properly
           children:<Widget>[
             Container(
