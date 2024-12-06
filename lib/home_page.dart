@@ -1,108 +1,85 @@
 import 'package:flutter/material.dart';
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+import 'package:fluttertoast/fluttertoast.dart';
+
+import 'new_page.dart';
+
+class HomePage2 extends StatelessWidget {
+  const HomePage2.HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-       
-        backgroundColor: Colors.blue,
-        title: Align(
-            alignment: Alignment.topRight,
-            child: Text("Row ")),
-
+        title: Text("Column"),
       ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+        children: [
+          Container(
+            margin: EdgeInsets.all(5.0),
+            padding: EdgeInsets.all(15.0),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8), color: Colors.blue),
+            child: Text(
+              "Dart",
+              style: TextStyle(color: Colors.white, fontSize: 25),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(5.0),
+            padding: EdgeInsets.all(15.0),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8), color: Colors.blue),
+            child: Text(
+              "Flutter",
+              style: TextStyle(color: Colors.white, fontSize: 25),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(5.0),
+            padding: EdgeInsets.all(15.0),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8), color: Colors.blue),
+            child: Text(
+              "Android",
+              style: TextStyle(color: Colors.white, fontSize: 25),
+            ),
+          ),
+          SizedBox(
+            width: 200,
+            child: ElevatedButton.icon(
+
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.white,
+                  size: 30.0,
+                ),
+                onPressed: (){
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => HomePage()));
+
+                  Fluttertoast.showToast(msg: "This is short msg");
+
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                 minimumSize: const Size.fromHeight(50),
+                  shape:RoundedRectangleBorder(
+
+                   borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+               label: Text("Click Me",style: TextStyle(
+                  color: Colors.white,
+                 fontSize: 20
+                ),)),
+          ),
 
 
-      // body:   SingleChildScrollView(
-      //   scrollDirection: Axis.horizontal,
-      //   child: Row(
-      //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-      //     children:<Widget>[
-      //       Container(
-      //         margin: EdgeInsets.all(12.0),
-      //         padding: EdgeInsets.all(8.0),
-      //         decoration:BoxDecoration(
-      //             borderRadius:BorderRadius.circular(8),
-      //             color:Colors.blue
-      //         ),
-      //         child: Text("Dart",style: TextStyle(color:Colors.white,fontSize:25),),
-      //       ),
-      //       Container(
-      //         margin: EdgeInsets.all(15.0),
-      //         padding: EdgeInsets.all(8.0),
-      //         decoration:BoxDecoration(
-      //             borderRadius:BorderRadius.circular(8),
-      //             color:Colors.green
-      //         ),
-      //         child: Text("Flutter",style: TextStyle(color:Colors.yellowAccent,fontSize:25),),
-      //       ),
-      //       Container(
-      //         margin: EdgeInsets.all(12.0),
-      //         padding: EdgeInsets.all(8.0),
-      //         decoration:BoxDecoration(
-      //             borderRadius:BorderRadius.circular(8),
-      //             color:Colors.green
-      //         ),
-      //         child: Text("MySQL",style: TextStyle(color:Colors.yellowAccent,fontSize:25),),
-      //       ),
-      //
-      //       Container(
-      //         margin: EdgeInsets.all(12.0),
-      //         padding: EdgeInsets.all(8.0),
-      //         decoration:BoxDecoration(
-      //             borderRadius:BorderRadius.circular(8),
-      //             color:Colors.green
-      //         ),
-      //         child: Text("MySQL",style: TextStyle(color:Colors.yellowAccent,fontSize:25),),
-      //       ),
-      //
-      //     ]
-      //       ),
-      // ),
-      body:   Row(
-          mainAxisAlignment: MainAxisAlignment.start,  //if we use scrollview, it will not work properly
-          children:<Widget>[
-            Container(
-              margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.all(8.0),
-              decoration:BoxDecoration(
-                  borderRadius:BorderRadius.circular(8),
-                  color:Colors.blue
-              ),
-              child: Text("Dart",style: TextStyle(color:Colors.white,fontSize:25),),
-            ),
-            Container(
-              margin: EdgeInsets.all(15.0),
-              padding: EdgeInsets.all(8.0),
-              decoration:BoxDecoration(
-                  borderRadius:BorderRadius.circular(8),
-                  color:Colors.green
-              ),
-              child: Text("Flutter",style: TextStyle(color:Colors.yellowAccent,fontSize:25),),
-            ),
-            Container(
-              margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.all(8.0),
-              decoration:BoxDecoration(
-                  borderRadius:BorderRadius.circular(8),
-                  color:Colors.green
-              ),
-              child: Text("MySQL",style: TextStyle(color:Colors.yellowAccent,fontSize:25),),
-            ),
 
-            Container(
-              margin: EdgeInsets.all(12.0),
-              padding: EdgeInsets.all(8.0),
-              decoration:BoxDecoration(
-                  borderRadius:BorderRadius.circular(8),
-                  color:Colors.green
-              ),
-              child: Text("Php",style: TextStyle(color:Colors.yellowAccent,fontSize:25),),
-            ),
 
-          ]
+        ],
       ),
     );
   }
